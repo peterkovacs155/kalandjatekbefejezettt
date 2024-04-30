@@ -1,0 +1,11 @@
+body {
+    background-image: url(esik.png);
+    background-size: cover;
+}
+h1 {
+    color: white;
+}
+p {
+font-size: 30px;
+text-align: center;
+}

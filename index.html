@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Szöveges Kalandjáték</title>
+  <link rel="stylesheet" href="style.css">
+  <link  href="index2.html">
+  <link  href="index3.html">
+  <link  href="index4.html">
+  <link  href="index5.html">
+  <link  href="index6.html">
+  <link  href="index7.html">
+  <link  href="index8.html">
+  <link  href="index9.html">
+  <link  href="index10.html">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+  
+      
+    </head>
+    <body class="container">
+      <h1 class="mt-5">Találj rá a kincsre</h1>
+      <div class="mt-3">
+        <p>Egy sötét erdő szélén állok, ahol a fák sűrű lombjai alatt a napfény alig jut át. Előttem három út terül el, mindegyik ugyanolyan homályos és titokzatos.
+          Átgondolom a lehetőségeket, és próbálom kikövetkeztetni, melyik út vezet a legkevesebb veszélybe.</p>
+        <ul>
+          <li><a href="index2.html" onclick="choosePath('left')">Balra fordulsz az erdőben</a>.</li>
+          <li><a href="index3.html" onclick="choosePath('center')">Középen mégy tovább az ösvényen</a>.</li>
+          <li><a href="index4.html" onclick="choosePath('right')">Jobbra tartasz az úton</a>.</li>
+        </ul>
+        <div id="story"></div>
+      </div>
+    
+      <script>
+        function choosePath(direction) {
+          if (direction === 'left') {
+            document.getElementById('story').innerHTML = `
+              <p>A bal úton sétálsz tovább és találkozol egy elhagyatott kis kunyhóval. Mit teszel?</p>
+              <ul>
+                <li><a href="#" onclick="continueAdventure('explore')">Bemész a kunyhóba</a>.</li>
+                <li><a href="#" onclick="continueAdventure('ignore')">Figyelmen kívül hagyod és folytatod az utadat</a>.</li>
+              </ul>
+            `;
+        
+          } else if (direction === 'right') {
+            document.getElementById('story').innerHTML = `
+              <p>A jobb úton továbbmész és egy hatalmas folyóhoz érsz. Mit teszel?</p>
+              <ul>
+                <li><a href="#" onclick="continueAdventure('swim')">Megpróbálod átúszni a folyót</a>.</li>
+                <li><a href="#" onclick="continueAdventure('build')">Építesz egy tutajt és átkel az árvízen</a>.</li>
+              </ul>
+            `;
+          }
+        }
+    
+        function continueAdventure(choice) {
+          if (choice === 'explore') {
+            document.getElementById('story').innerHTML += `
+              <p>Bemész a kunyhóba és találsz egy rejtélyes varázskövet. Gratulálok, egy kincset találtál!</p>
+            `;
+          } else if (choice === 'ignore') {
+            document.getElementById('story').innerHTML += `
+              <p>Figyelmen kívül hagytad a kunyhót és folytattad az utadat. Elveszted az esélyt a kincsre.</p>
+            `;
+          } else if (choice === 'struggle') {
+            document.getElementById('story').innerHTML += `
+              <p>Hiába próbálkozol, nem sikerül kijutnod az örvényből és elmerülsz a mélyben.</p>
+            `;
+          } else if (choice === 'accept') {
+            document.getElementById('story').innerHTML += `
+              <p>Vársz a segítségre, és egy hajó érkezik a segítségedre. Biztonságban vagy, de elveszíted az időt.</p>
+            `;
+          } else if (choice === 'swim') {
+            document.getElementById('story').innerHTML += `
+              <p>Megpróbálod átúszni a folyót, de az erős sodrás elsodor. Visszakerülsz a part közelébe, de továbbmész.</p>
+            `;
+          } else if (choice === 'build') {
+            document.getElementById('story').innerHTML += `
+              <p>Sikeresen építesz egy tutajt és átkelsz a folyón. Továbbmész a kalandodban!</p>
+            `;
+          }
+        }
+      </script>
+    </body>
+    </html>
+    
+

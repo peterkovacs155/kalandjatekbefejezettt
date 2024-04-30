@@ -1,0 +1,10 @@
+body {
+    background-image: url(szakadek.png);
+    background-size: cover;
+    
+}
+p {
+    color: white;
+    text-align: center;
+    font-size: 25px;
+}
